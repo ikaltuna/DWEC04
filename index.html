@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>CineTrends - Resumen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">🎬 CineTrends</div>
+    <nav class="nav">
+      <a href="index.html" class="nav-link active">Resumen</a>
+      <a href="html/favoritos.html" class="nav-link">Favoritos</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Ranking de películas populares</h1>
+      <p>Explora las tendencias actuales y consulta rápidamente los datos clave de cada película.</p>
+    </section>
+
+    <section class="controls">
+      <div class="control-group">
+        <label for="search-input">Buscar por título:</label>
+        <input type="text" id="search-input" placeholder="Ej: Inception" />
+      </div>
+
+      <div class="control-group">
+        <label for="sort-select">Ordenar por:</label>
+        <select id="sort-select">
+          <option value="popularity">Popularidad</option>
+          <option value="vote_average">Puntuación media</option>
+          <option value="vote_count">Número de votos</option>
+          <option value="release_date">Fecha de estreno</option>
+        </select>
+      </div>
+
+      <div class="control-group control-group--inline-end">
+        <button id="reset-filters" class="btn-secondary" type="button">Limpiar filtros</button>
+      </div>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi-card">
+        <span class="kpi-label">Películas cargadas</span>
+        <span class="kpi-value" id="kpi-count">0</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Puntuación media global</span>
+        <span class="kpi-value" id="kpi-rating">-</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Popularidad media</span>
+        <span class="kpi-value" id="kpi-popularity">-</span>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <div id="loading" class="loading">Cargando películas...</div>
+      <div id="error" class="error hidden"></div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Póster</th>
+            <th>Título</th>
+            <th>Puntuación</th>
+            <th>Votos</th>
+            <th>Popularidad</th>
+            <th>Estreno</th>
+            <th>Favorito</th>
+          </tr>
+        </thead>
+        <tbody id="movies-tbody">
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>CineTrends</small>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/resumen.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>CineTrends - Detalle de película</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">🎬 CineTrends</div>
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">Resumen</a>
+      <a href="favoritos.html" class="nav-link">Favoritos</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header page-header--with-back">
+      <button id="back-button" class="btn-secondary" type="button">← Volver</button>
+      <h1>Detalle de película</h1>
+    </section>
+
+    <section class="detail-section" id="movie-detail">
+      <!-- Detalle dinámico -->
+    </section>
+
+    <section class="similar-section">
+      <h2>Películas similares</h2>
+      <p class="section-subtitle">Haz clic en las cabeceras para ordenar y en una fila para abrir el detalle.</p>
+
+      <div id="similar-loading" class="loading">Cargando similares...</div>
+      <div id="similar-error" class="error hidden"></div>
+
+      <table class="data-table interactive">
+        <thead>
+          <tr>
+            <th data-sort="title">Título</th>
+            <th data-sort="vote_average">Puntuación</th>
+            <th data-sort="popularity">Popularidad</th>
+            <th data-sort="release_date">Estreno</th>
+          </tr>
+        </thead>
+        <tbody id="similar-tbody">
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>CineTrends</small>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/favorites.js"></script>
+  <script src="../js/detalle.js"></script>
+</body>
+</html>
